@@ -7,6 +7,7 @@ import axios from "axios";
 import { setTodolist } from "../slices/todoSlice";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { setLoading } from "../slices/authSlice";
 
 const Home = () => {
   const [title, settitle] = useState("");
@@ -29,12 +30,15 @@ const Home = () => {
       toast.error("Log in first to create todo");
       return;
     } else {
+      const toastId = toast.loading("loading...");
+      dispatch(setLoading(true));
       try {
         const data = await apiConnector("POST", CREATE_TODO, {
           title,
           description,
           token,
         });
+        toast.success("Todo created");
         settitle("");
         setdescription("");
         setrefresh((prev) => !prev);
@@ -43,6 +47,8 @@ const Home = () => {
         console.log("SUBMIT TODO ERROR.......", e);
         toast.error("Api error while submiting todo to db");
       }
+      dispatch(setLoading(false));
+      toast.dismiss(toastId);
     }
   };
 
