@@ -4,7 +4,6 @@ const app = express();
 require("dotenv").config();
 const dbConnect = require("./config/database");
 const cookieParser = require("cookie-parser");
-const cors = require("cors");
 
 //load config from env file
 
@@ -26,7 +25,13 @@ const UserRoutes = require("./routes/User");
 app.use("/api/v1", todoRoutes);
 app.use("/api/v1/auth", UserRoutes);
 
-app.use(cors());
+const cors = require("cors");
+const corsOptions = {
+  origin: [process.env.FRONTEND_URL],
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 //start server
 app.listen(PORT, () => {
