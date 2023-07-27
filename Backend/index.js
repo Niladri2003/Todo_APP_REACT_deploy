@@ -27,7 +27,7 @@ app.use("/api/v1/auth", UserRoutes);
 
 const cors = require("cors");
 const corsOptions = {
-  origin: "https://todo-app-frontend-git-main-niladri2003.vercel.app",
+  origin: "*",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
