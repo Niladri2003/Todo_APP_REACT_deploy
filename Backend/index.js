@@ -27,10 +27,8 @@ app.use("/api/v1/auth", UserRoutes);
 
 app.use(function (req, res, next) {
   // res.header("Access-Control-Allow-Origin", "*");
-  console.log("-----Hello i am inside cors call----");
-  const allowedOrigins = [
-    "https://todo-app-frontend-git-main-niladri2003.vercel.app",
-  ];
+  console.log("----Hello i am inside cors call-----");
+  const allowedOrigins = ["https://todo-app-react-nu-lemon.vercel.app"];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
@@ -39,6 +37,9 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
+  res.header("Access-Control-Allow-credentials", true);
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
+  next();
 });
 console.log(process.env.FRONTEND_URL);
 
