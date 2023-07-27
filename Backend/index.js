@@ -32,6 +32,7 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
+console.log(env.process.FRONTEND_URL);
 
 //start server
 app.listen(PORT, () => {
