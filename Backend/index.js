@@ -28,7 +28,7 @@ app.use("/api/v1/auth", UserRoutes);
 app.use(function (req, res, next) {
   // res.header("Access-Control-Allow-Origin", "*");
   console.log("----Hello i am inside cors call-----");
-  const allowedOrigins = ["https://todo-app-react-nu-lemon.vercel.app"];
+  const allowedOrigins = ["https://todo-app-react-deploy-beta.vercel.app"];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
