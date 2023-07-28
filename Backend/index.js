@@ -25,23 +25,14 @@ const UserRoutes = require("./routes/User");
 app.use("/api/v1", todoRoutes);
 app.use("/api/v1/auth", UserRoutes);
 
-app.use(function (req, res, next) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  console.log("----Hello i am inside cors call-----");
-  const allowedOrigins = ["https://todo-app-react-deploy-beta.vercel.app"];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.header("Access-Control-Allow-credentials", true);
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
-  next();
-});
-console.log(process.env.FRONTEND_URL);
+const cors = require("cors");
+const corsOptions = {
+  origin: "https://todo-app-react-deploy-beta.vercel.app",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+//
 
 //start server
 app.listen(PORT, () => {
