@@ -28,15 +28,19 @@ export function signup(
         email,
       });
       console.log("SIGNUP API RESPONSE............", response);
-
-      if (!response.data.success) {
-        throw new Error(response.data.message);
+      console.log(response.data.message);
+      if (response.data.success==='false') {
+        
+        // throw new Error(response.data.message);
+        toast.error(response.data.message);
+       
       }
       toast.success("Signup Successful");
       navigate("/login");
     } catch (e) {
-      console.log("SIGNUP API ERROR............", e);
-      toast.error("Signup Failed");
+      console.log("SIGNUP API ERROR............", e.response);
+      
+      toast.error(e.response.data.message);
       navigate("/login/signup");
     }
     dispatch(setLoading(false));

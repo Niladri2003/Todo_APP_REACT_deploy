@@ -13,7 +13,7 @@ const Navbar = () => {
   // console.log(token);
   // console.log(process.env.REACT_APP_BASE_URL);
   return (
-    <div className="flex items-center h-14 justify-center border-b-[1px] border-black">
+    <div className="flex items-center h-14 justify-center shadow-md">
       <div className="flex w-11/12 items-center ">
         <Link to={"/"} className="justify-start">
           <img src={Logo} alt="Logo" loading="lazy" />
@@ -21,9 +21,10 @@ const Navbar = () => {
 
         <nav className="flex flex-row gap-2 w-full justify-end mr-2 ">
           <Link to="/" className="text-white font-Nunito font-[900]">
-            <p className="bg-[#8ba5fa] hover:bg-[#7390f2] tracking-[2.6px] p-2 rounded-md">
-              Home
-            </p>
+            {token=== null && <p className="bg-[#8ba5fa] hover:bg-[#7390f2] tracking-[2.6px] p-2 rounded-md">
+            Home
+              
+            </p>}
           </Link>
           {token === null ? (
             <Link to="login" className="text-white font-Nunito font-[900]">

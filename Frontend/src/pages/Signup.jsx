@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Logo from "../assets/LoginPageLogo.png";
+import Logo from "../assets/SignupBner.png";
 import { toast } from "react-hot-toast";
 
 import { signup } from "../services/operations/authApi";
@@ -44,24 +44,24 @@ function Signup() {
   };
 
   return (
-    <div className="bg-white flex justify-center border-2">
-      <div className="mx-auto flex w-11/12 max-w-maxContent flex-row justify-center   py-12 md:flex-row md:gap-y-0 md:gap-x-12">
-        <div className="w-[50%] relative">
+    <div className="bg-white flex justify-center mt-4">
+      <div className="mx-auto flex w-11/12 max-w-maxContent lg:flex-row md:flex-col flex-col justify-center   py-12  md:gap-y-0 md:gap-x-12">
+        <div className="lg:w-[50%] relative">
           <img
             src={Logo}
-            className="w-[80%] absolute"
+            className="lg:w-[80%] w-[100%]  "
             alt="Signup page banner image"
           />
-          <p className="text-lg absolute left-[50%] top-8 -translate-x-36">
+          <p className="text-lg font-Nunito lg:text-[40px] text-[20px] tracking-[3.6px] font-[900] pl-5 text-[#84a4e5]">
             Lets Organise your day
           </p>
         </div>
 
-        <div className="w-[40%]">
-          <h1 className="   font-Overpass text-[36px] font-[800] tracking-[3.6px] text-[#444B59]">
+        <div className="lg:w-[40%] lg:m-0 mt-10 m-2">
+          <h1 className="   font-Overpass lg:text-[36px] text-[30px] font-[800] lg:tracking-[3.6px] text-[#444B59]">
             Welcome !
           </h1>
-          <p className="text-[24px] font-Nunito font-[400] mb-2 tracking-[3.6px]">
+          <p className="lg:text-[24px] text-[15px] font-Nunito font-[500] mb-2 tracking-[3.6px]">
             Let's Join us
           </p>
 
@@ -69,9 +69,9 @@ function Signup() {
             onSubmit={handleOnSubmit}
             className="mt-6 flex w-full flex-col gap-y-4"
           >
-            <div className="flex flex-row gap-3">
-              <label className="w-[50%]">
-                <p className="mb-1 font-Nunito text-[14px] font-[600] tracking-[3.6px] ">
+            <div className="flex lg:flex-row flex-col gap-3">
+              <label className="lg:w-[50%]">
+                <p className="mb-1 font-Nunito lg:text-[14px] text-[14px] font-[600] tracking-[3.6px] ">
                   First Name <sup className="text-pink-600">*</sup>
                 </p>
                 <input
@@ -87,7 +87,7 @@ function Signup() {
                   className="w-full rounded-[80px] border-2 border-[#789ADE] p-[12px] placeholder:text-[#C8D3F9] placeholder:font-Nunito placeholder:font-[400] placeholder:tracking-[3.6px]"
                 />
               </label>
-              <label className="relative w-[50%]">
+              <label className="relative lg:w-[50%]">
                 <p className="mb-1 font-Nunito text-[14px] font-[600] tracking-[3.6px] ">
                   Last Name <sup className="text-pink-600">*</sup>
                 </p>
@@ -122,8 +122,8 @@ function Signup() {
                 className="w-full rounded-[80px] border-2 border-[#789ADE] p-[12px] placeholder:text-[#C8D3F9] placeholder:font-Nunito placeholder:font-[400] placeholder:tracking-[3.6px]"
               />
             </label>
-            <div className="flex flex-row gap-3">
-              <label className=" relative w-[50%]">
+            <div className="flex lg:flex-row flex-col gap-3">
+              <label className=" relative lg:w-[50%]">
                 <p className="mb-1 font-Nunito text-[14px] font-[600] tracking-[3.6px] ">
                   Create Password <sup className="text-pink-600">*</sup>
                 </p>
@@ -150,7 +150,7 @@ function Signup() {
                   )}
                 </span>
               </label>
-              <label className="relative w-[50%]">
+              <label className="relative lg:w-[50%]">
                 <p className="mb-1 font-Nunito text-[14px] font-[600] tracking-[3.6px] ">
                   Confirm Password <sup className="text-pink-600">*</sup>
                 </p>
@@ -184,7 +184,7 @@ function Signup() {
             >
               <p className="text-white font-Nunito font-[800] tracking-[3.6px]">
                 {" "}
-                Sign In
+                Create Acount
               </p>
             </button>
           </form>

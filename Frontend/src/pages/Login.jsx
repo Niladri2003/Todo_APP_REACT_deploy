@@ -31,16 +31,16 @@ function Login() {
   };
 
   return (
-    <div className="bg-white  justify-center border-2 mx-auto flex w-11/12">
-      <div className="mx-auto flex w-11/12 max-w-maxContent flex-row justify-center   py-12 md:flex-row md:gap-y-0 md:gap-x-12">
-        <div className="w-[40%]">
-          <h1 className="   font-Overpass text-[36px] font-[800] tracking-[3.6px] text-[#444B59]">
+    <div className="bg-white  justify-center mt-4 mx-auto flex w-11/12">
+      <div className="mx-auto flex w-11/12 max-w-maxContent lg:flex-row flex-col justify-between   py-12 md:flex-row md:gap-y-0 md:gap-x-12">
+        <div className="lg:w-[40%]">
+          <h1 className="   font-Overpass lg:text-[36px] text-[30px] font-[800] tracking-[3.6px] text-[#444B59]">
             Welcome Back !
           </h1>
-          <p className="text-[24px] font-Nunito font-[400] mb-2 tracking-[3.6px]">
-            Don't have a account ,{" "}
+          <p className="lg:text-[24px] text-[15px] font-Nunito font-[400] mb-2 tracking-[3.6px]">
+            Don't have a account ,<br/>
             <Link to="/login/signup">
-              <span className="text-[#8699DA] ">Sign up</span>
+              <span className="text-[#4266db] font-[900] ">Create a Account</span>
             </Link>
           </p>
 
@@ -103,16 +103,14 @@ function Login() {
             >
               <p className="text-white font-Nunito font-[800] tracking-[3.6px]">
                 {" "}
-                Sign In
+                Log in
               </p>
             </button>
           </form>
         </div>
-        <div className="w-[50%] relative">
-          <img src={Logo} className="w-[80%] absolute" alt="Log in poster" />
-          <p className="text-lg absolute left-[50%] top-8 -translate-x-36">
-            Lets Organise your day
-          </p>
+        <div className="lg:w-[40%] md:w-[40%] lg:visible md:visible invisible ">
+          <img src={Logo} className="w-[100%] lg:pr-10" alt="Log in poster" />
+          
         </div>
       </div>
     </div>

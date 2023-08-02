@@ -93,21 +93,21 @@ const Home = () => {
     <div className="flex flex-col">
       <div className="mx-auto flex flex-col w-11/12 items-center justify-center">
         <div
-          className={`flex flex-col justify-center items-center gap-y-2 mt-4 w-[80%] display
+          className={`flex flex-col justify-center items-center gap-y-2 mt-4 lg:w-[80%] w-[100%] display
           ${token === null ? "hidden" : "display"} }`}
         >
           <form
             onSubmit={handleonSubmit}
-            className="  p-5 flex items-center flex-col w-[100%] shadow-lg"
+            className="  lg:p-5 md:p-5 p-2 flex items-center flex-col w-[100%] shadow-lg"
           >
-            <label className="w-[60%] ">
+            <label className="lg:w-[60%] ">
               <input
                 required
                 placeholder="Enter Title"
                 value={title}
                 type="text"
                 onChange={(e) => settitle(e.target.value)}
-                className="w-full  border-b-2 border-[#789ADE]  p-[12px] placeholder:text-[#768bd7] placeholder:font-Nunito placeholder:font-[400] placeholder:tracking-[3.6px] drop-shadow-none"
+                className="w-full  border-b-2 border-[#789ADE]  p-[12px] placeholder:text-[#768bd7] placeholder:font-Nunito placeholder:font-[400] placeholder:tracking-[3.6px] drop-shadow-none outline-none"
               />
             </label>
             <label className="w-[70%] ">
@@ -117,7 +117,7 @@ const Home = () => {
                 type="text"
                 onChange={(e) => setdescription(e.target.value)}
                 placeholder="Take a note"
-                className="w-full border-b-2  border-[#789ADE]  p-[12px] placeholder:text-[#768bd7] placeholder:font-Nunito placeholder:font-[400] placeholder:tracking-[3.6px]"
+                className="w-[100%] border-b-2  border-[#789ADE]  p-[12px] placeholder:text-[#768bd7] placeholder:font-Nunito placeholder:font-[400] placeholder:tracking-[3.6px] outline-none resize-y"
               />
             </label>
             <button
@@ -132,11 +132,11 @@ const Home = () => {
         </div>
         {token === null && (
           <div className="text-black font-Nunito font-[900]  flex items-center flex-col mt-40">
-            <p className="tracking-[3.6px] text-[30px]">Welcome to Todo APP</p>
-            <p className=" text-[27px]">
+            <p className="lg:tracking-[3.6px] lg:text-[30px] text-[25px] tracking-[1.5px]">Welcome to Todo APP</p>
+            <p className=" lg:text-[27px] text-[18px]">
               {" "}
-              <Link to="login" className="text-[#7a90d7]">
-                Login
+              <Link to="login/signup" className="text-[#7a90d7] font-[900]">
+                Sign up
               </Link>{" "}
               first to create Todo
             </p>
@@ -144,7 +144,7 @@ const Home = () => {
         )}
       </div>
       <div className="mx-auto  w-11/12 mt-10 justify-between ">
-        <div className=" grid grid-cols-3 gap-4 mx-auto">
+        <div className=" grid lg:grid-cols-3 grid-cols-2 gap-4">
           {todolist.todolist.map((Task) => {
             return (
               <TodoCard
